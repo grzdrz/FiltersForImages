@@ -1,0 +1,9 @@
+C:\Users\space\Music\WebFilters\FiltersTEST\bin\Debug\FiltersTEST.exe.config
+C:\Users\space\Music\WebFilters\FiltersTEST\bin\Debug\FiltersTEST.exe
+C:\Users\space\Music\WebFilters\FiltersTEST\bin\Debug\FiltersTEST.pdb
+C:\Users\space\Music\WebFilters\FiltersTEST\obj\Debug\FiltersTEST.csprojAssemblyReference.cache
+C:\Users\space\Music\WebFilters\FiltersTEST\obj\Debug\FiltersTEST.Form1.resources
+C:\Users\space\Music\WebFilters\FiltersTEST\obj\Debug\FiltersTEST.Properties.Resources.resources
+C:\Users\space\Music\WebFilters\FiltersTEST\obj\Debug\FiltersTEST.csproj.GenerateResource.cache
+C:\Users\space\Music\WebFilters\FiltersTEST\obj\Debug\FiltersTEST.exe
+C:\Users\space\Music\WebFilters\FiltersTEST\obj\Debug\FiltersTEST.pdb

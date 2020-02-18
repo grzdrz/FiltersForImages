@@ -11,6 +11,13 @@ namespace FiltersTEST.Filters
 {
     public class GrayShadesFilter : Filter
     {
+        public override string FilterName
+        {
+            get { return "Gray shades filter"; }
+        }
+
+        public override Dictionary<string, object> FilterOptions { get; set; }
+
         public override Bitmap ApplyFilter(Pixel[,] pixels)
         {
             Bitmap newImage = new Bitmap(pixels.GetLength(0), pixels.GetLength(1));
@@ -24,11 +31,6 @@ namespace FiltersTEST.Filters
                     newImage.SetPixel(i, j, Color.FromArgb(pixels[i, j].A, gray, gray, gray));
                 }
             return newImage;
-        }
-
-        public override string FilterName
-        {
-            get { return "Gray shades filter"; }
         }
     }
 }

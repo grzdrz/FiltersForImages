@@ -7,3 +7,4 @@ C:\Users\space\Music\WebFilters\FiltersTEST\obj\Debug\FiltersTEST.Properties.Res
 C:\Users\space\Music\WebFilters\FiltersTEST\obj\Debug\FiltersTEST.csproj.GenerateResource.cache
 C:\Users\space\Music\WebFilters\FiltersTEST\obj\Debug\FiltersTEST.exe
 C:\Users\space\Music\WebFilters\FiltersTEST\obj\Debug\FiltersTEST.pdb
+C:\Users\space\Music\WebFilters\FiltersTEST\obj\Debug\FiltersTEST.Form2.resources

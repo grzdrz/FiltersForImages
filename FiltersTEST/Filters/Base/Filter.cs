@@ -13,5 +13,7 @@ namespace FiltersTEST.Filters
         public abstract Bitmap ApplyFilter(Pixel[,] pixels);
 
         public abstract string FilterName { get; }
+
+        public abstract Dictionary<string, object> FilterOptions { get; set; }
     }
 }

@@ -24,11 +24,13 @@ namespace FiltersTEST
         {
             InitializeComponent();
 
-            button1.Click += button1_Click_ApplyFilter;
-            button2.Click += button2_Click_SaveImage;
-            button3.Click += button3_Click_LoadImage;
-            button1.Enabled = false;
-            button2.Enabled = false;
+            button1_ApplyFilter.Click += button1_Click_ApplyFilter;
+            button2_SaveImage.Click += button2_Click_SaveImage;
+            button3_LoadImage.Click += button3_Click_LoadImage;
+            button4_FilterOptions.Click += button4_Click_FiltersOptions;
+            button1_ApplyFilter.Enabled = false;
+            button2_SaveImage.Enabled = false;
+            button4_FilterOptions.Enabled = false;
 
             comboBox1.DataSource = new List<Filter> 
             {
@@ -49,12 +51,13 @@ namespace FiltersTEST
             bitmap2 = selectedFilter.ApplyFilter(pixelsArray1);
             pictureBox2.Image = bitmap2;
 
-            button2.Enabled = true;
+            button2_SaveImage.Enabled = true;
 
             Cursor.Current = Cursors.Default;
-            button1.Enabled = true;
-            button2.Enabled = true;
-            button3.Enabled = true;
+            button1_ApplyFilter.Enabled = true;
+            button4_FilterOptions.Enabled = true;
+            button2_SaveImage.Enabled = true;
+            button3_LoadImage.Enabled = true;
         }
 
         private void button2_Click_SaveImage(object sender, EventArgs e)
@@ -93,16 +96,30 @@ namespace FiltersTEST
                 pixelsArray1 = bitmap1.BitmapToPixelsArray();
 
                 Cursor.Current = Cursors.Default;
-                button1.Enabled = true;
-                button3.Enabled = true;
+                button1_ApplyFilter.Enabled = true;
+                button4_FilterOptions.Enabled = true;
+                button3_LoadImage.Enabled = true;
             }
+        }
+
+        Form2 Form2;
+        private void button4_Click_FiltersOptions(object sender, EventArgs e)
+        {
+            if (comboBox1.SelectedItem is null) return;
+            //if (!(comboBox1.SelectedItem is IFilterOptionControls)) return;
+
+            Filter selectedFilter = (Filter)comboBox1.SelectedItem;
+            Form2 = new Form2(this, selectedFilter);
+            Form2.Show();
+            this.Enabled = false;
         }
 
         private void DisableAllButtons()
         {
-            button1.Enabled = false;
-            button2.Enabled = false;
-            button3.Enabled = false;
+            button1_ApplyFilter.Enabled = false;
+            button2_SaveImage.Enabled = false;
+            button3_LoadImage.Enabled = false;
+            button4_FilterOptions.Enabled = false;
         }
     }
 }

@@ -29,14 +29,15 @@
         private void InitializeComponent()
         {
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.button1_ApplyFilter = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.button2_SaveImage = new System.Windows.Forms.Button();
+            this.button3_LoadImage = new System.Windows.Forms.Button();
+            this.button4_FilterOptions = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
@@ -50,14 +51,14 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // button1
+            // button1_ApplyFilter
             // 
-            this.button1.Location = new System.Drawing.Point(609, 66);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(178, 38);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Apply filter";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1_ApplyFilter.Location = new System.Drawing.Point(609, 66);
+            this.button1_ApplyFilter.Name = "button1_ApplyFilter";
+            this.button1_ApplyFilter.Size = new System.Drawing.Size(178, 38);
+            this.button1_ApplyFilter.TabIndex = 2;
+            this.button1_ApplyFilter.Text = "Apply filter";
+            this.button1_ApplyFilter.UseVisualStyleBackColor = true;
             // 
             // comboBox1
             // 
@@ -107,37 +108,47 @@
             this.label3.TabIndex = 7;
             this.label3.Text = "After";
             // 
-            // button2
+            // button2_SaveImage
             // 
-            this.button2.Location = new System.Drawing.Point(609, 400);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(182, 38);
-            this.button2.TabIndex = 8;
-            this.button2.Text = "Save image";
-            this.button2.UseVisualStyleBackColor = true;
+            this.button2_SaveImage.Location = new System.Drawing.Point(609, 400);
+            this.button2_SaveImage.Name = "button2_SaveImage";
+            this.button2_SaveImage.Size = new System.Drawing.Size(182, 38);
+            this.button2_SaveImage.TabIndex = 8;
+            this.button2_SaveImage.Text = "Save image";
+            this.button2_SaveImage.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // button3_LoadImage
             // 
-            this.button3.Location = new System.Drawing.Point(609, 356);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(182, 38);
-            this.button3.TabIndex = 9;
-            this.button3.Text = "Load image";
-            this.button3.UseVisualStyleBackColor = true;
+            this.button3_LoadImage.Location = new System.Drawing.Point(609, 356);
+            this.button3_LoadImage.Name = "button3_LoadImage";
+            this.button3_LoadImage.Size = new System.Drawing.Size(182, 38);
+            this.button3_LoadImage.TabIndex = 9;
+            this.button3_LoadImage.Text = "Load image";
+            this.button3_LoadImage.UseVisualStyleBackColor = true;
+            // 
+            // button4_FilterOptions
+            // 
+            this.button4_FilterOptions.Location = new System.Drawing.Point(609, 110);
+            this.button4_FilterOptions.Name = "button4_FilterOptions";
+            this.button4_FilterOptions.Size = new System.Drawing.Size(178, 38);
+            this.button4_FilterOptions.TabIndex = 10;
+            this.button4_FilterOptions.Text = "Filter options";
+            this.button4_FilterOptions.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button4_FilterOptions);
+            this.Controls.Add(this.button3_LoadImage);
+            this.Controls.Add(this.button2_SaveImage);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.button1_ApplyFilter);
             this.Controls.Add(this.pictureBox1);
             this.Name = "Form1";
             this.Text = "Form1";
@@ -151,14 +162,15 @@
         #endregion
 
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button1_ApplyFilter;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button2_SaveImage;
+        private System.Windows.Forms.Button button3_LoadImage;
+        private System.Windows.Forms.Button button4_FilterOptions;
     }
 }
 

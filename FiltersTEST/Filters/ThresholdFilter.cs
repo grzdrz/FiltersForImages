@@ -5,17 +5,31 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace FiltersTEST.Filters
 {
-    public class ThresholdFilter : Filter
+    public class ThresholdFilter : Filter, IFilterOptionControls
     {
-        public override string FilterName => "Threshold filter";
+        public override string FilterName 
+        {
+            get { return "Threshold filter"; } 
+        }
 
-        public double WhitePixelsFraction = 0.3d;/////////
+        //WhitePixelsFraction = n%;
+        public override Dictionary<string, object> FilterOptions { get; set; }
+
+        public ThresholdFilter()
+        {
+            //дефолтные параметры фильтра
+            FilterOptions = new Dictionary<string, object>();
+            FilterOptions["WhitePixelsFraction"] = 30d;
+        }
 
         public override Bitmap ApplyFilter(Pixel[,] pixels)
         {
+            double WhitePixelsFraction = ((double)FilterOptions["WhitePixelsFraction"]) / 100d;
+
             //линеаризируем двум. массив пикселей в одномерный
             List<Pixel> pixelsLineArray = new List<Pixel>();
             for (int i = 0; i < pixels.GetLength(0); i++)
@@ -29,7 +43,7 @@ namespace FiltersTEST.Filters
 
             //численность белых пикселей = общая численность пикселей * доля белых пикселей
             int CountOfWhitePixels = (int)(WhitePixelsFraction * pixels.Length);
-  
+
             int counter = 0;
             foreach (var pixel in pixelsLineArray)
             {
@@ -41,6 +55,26 @@ namespace FiltersTEST.Filters
             }
 
             return resultImage;
+        }
+
+        public void CreateOptionControls(Form2 formOfOptions)
+        {
+            NumericUpDown numericUpDown1_WhitePixelsFraction = new NumericUpDown();
+            numericUpDown1_WhitePixelsFraction.Value = Convert.ToDecimal(FilterOptions["WhitePixelsFraction"]);
+            numericUpDown1_WhitePixelsFraction.Maximum = 100;
+            numericUpDown1_WhitePixelsFraction.Minimum = 0;
+            numericUpDown1_WhitePixelsFraction.Name = "WhitePixelsFraction";
+            numericUpDown1_WhitePixelsFraction.Size = new Size(171, 20);////
+            numericUpDown1_WhitePixelsFraction.Location = new System.Drawing.Point(123, 13);////
+
+            Label label_WhitePixelsFraction = new Label();
+            label_WhitePixelsFraction.Font = new Font("Microsoft Sans Serif", 12F);
+            label_WhitePixelsFraction.Text = "White pixels fraction";
+            label_WhitePixelsFraction.Size = new Size(51, 20);/////
+            label_WhitePixelsFraction.Location = new System.Drawing.Point(13, 13);//////
+
+            formOfOptions.Controls.Add(numericUpDown1_WhitePixelsFraction);
+            formOfOptions.Controls.Add(label_WhitePixelsFraction);
         }
     }
 

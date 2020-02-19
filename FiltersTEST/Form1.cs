@@ -35,7 +35,8 @@ namespace FiltersTEST
             comboBox1.DataSource = new List<Filter> 
             {
                 new GrayShadesFilter(),
-                new ThresholdFilter()
+                new ThresholdFilter(),
+                new MedianFilter()
             };
             comboBox1.DisplayMember = "FilterName";
         }
@@ -84,7 +85,7 @@ namespace FiltersTEST
             OpenFileDialog openFileDialog = new OpenFileDialog();
             openFileDialog.CheckFileExists = true;
             openFileDialog.AddExtension = true;
-            openFileDialog.Filter = "PNG files (*.png)|*.png|JPEG files (*.jpg)|*.jpg";
+            openFileDialog.Filter = "PNG files (*.png)|*.png|JPEG files (*.jpg)|*.jpg|BMP files (*.bmp)|*.bmp";
 
             if (openFileDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {

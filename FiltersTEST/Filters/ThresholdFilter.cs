@@ -16,7 +16,6 @@ namespace FiltersTEST.Filters
             get { return "Threshold filter"; } 
         }
 
-        //WhitePixelsFraction = n%;
         public override Dictionary<string, object> FilterOptions { get; set; }
 
         public ThresholdFilter()
@@ -28,6 +27,7 @@ namespace FiltersTEST.Filters
 
         public override Bitmap ApplyFilter(Pixel[,] pixels)
         {
+            //итоговая доля белых пикселей
             double WhitePixelsFraction = ((double)FilterOptions["WhitePixelsFraction"]) / 100d;
 
             //линеаризируем двум. массив пикселей в одномерный
@@ -65,34 +65,16 @@ namespace FiltersTEST.Filters
             numericUpDown1_WhitePixelsFraction.Minimum = 0;
             numericUpDown1_WhitePixelsFraction.Name = "WhitePixelsFraction";
             numericUpDown1_WhitePixelsFraction.Size = new Size(171, 20);////
-            numericUpDown1_WhitePixelsFraction.Location = new System.Drawing.Point(123, 13);////
+            numericUpDown1_WhitePixelsFraction.Location = new System.Drawing.Point(123, 10);////
 
             Label label_WhitePixelsFraction = new Label();
-            label_WhitePixelsFraction.Font = new Font("Microsoft Sans Serif", 12F);
+            label_WhitePixelsFraction.Font = new Font("Microsoft Sans Serif", 8F);
             label_WhitePixelsFraction.Text = "White pixels fraction";
-            label_WhitePixelsFraction.Size = new Size(51, 20);/////
-            label_WhitePixelsFraction.Location = new System.Drawing.Point(13, 13);//////
+            label_WhitePixelsFraction.Size = new Size(100, 20);/////
+            label_WhitePixelsFraction.Location = new System.Drawing.Point(5, 10);//////
 
             formOfOptions.Controls.Add(numericUpDown1_WhitePixelsFraction);
             formOfOptions.Controls.Add(label_WhitePixelsFraction);
-        }
-    }
-
-    public class PixelComparer : IComparer<Pixel>
-    {
-        public int Compare(Pixel pixel1, Pixel pixel2)
-        {
-            var temp1 = (int)(255 * Math.Round(0.299 * pixel1.R + 0.587 * pixel1.G + 0.114 * pixel1.B, 10) / 255);
-            temp1 = Math.Min(temp1, 255);
-            temp1 = Math.Max(temp1, 0);
-
-            var temp2 = (int)(255 * Math.Round(0.299 * pixel2.R + 0.587 * pixel2.G + 0.114 * pixel2.B, 10) / 255);
-            temp2 = Math.Min(temp2, 255);
-            temp2 = Math.Max(temp2, 0);
-
-            if (temp1 > temp2)return 1;
-            else if (temp1 < temp2) return -1;
-            else return 0;
         }
     }
 }

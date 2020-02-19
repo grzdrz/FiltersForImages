@@ -48,6 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Filters\Base\IFilterOptionControls.cs" />
+    <Compile Include="Filters\MedianFilter.cs" />
     <Compile Include="Form2.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -65,6 +66,7 @@
     </Compile>
     <Compile Include="Filters\GrayShadesFilter.cs" />
     <Compile Include="ImageData\Pixel.cs" />
+    <Compile Include="ImageData\PixelComparer.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
@@ -94,6 +96,16 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Images\ResultGrayFilter.png" />
+    <Content Include="Images\ResultMedianFilter1.png" />
+    <Content Include="Images\ResultMedianFilter2.png" />
+    <Content Include="Images\ResultThresholdFilter.png" />
+    <Content Include="Images\SourceGrayImage.png" />
+    <Content Include="Images\SourceMedianImage1.bmp" />
+    <Content Include="Images\SourceMedianImage2.png" />
+    <Content Include="Images\SourceThresholdImage.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

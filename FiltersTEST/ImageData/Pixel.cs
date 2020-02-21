@@ -86,6 +86,30 @@ namespace FiltersTEST.ImageData
             B = color.B;
             A = color.A;
         }
+
+
+        //public static Pixel operator +(Pixel pixel1, double number)
+        //{
+        //    byte r = (byte)FilterExtremeValues(pixel1.R + number);
+        //    byte g = (byte)FilterExtremeValues(pixel1.G + number);
+        //    byte b = (byte)FilterExtremeValues(pixel1.B + number);
+        //    return new Pixel(r, g, b, default, default);
+        //}
+
+        //public static Pixel operator +(Pixel pixel1, Pixel pixel2)
+        //{
+        //    byte r = (byte)FilterExtremeValues(pixel1.R + pixel2.R);
+        //    byte g = (byte)FilterExtremeValues(pixel1.G + pixel2.G);
+        //    byte b = (byte)FilterExtremeValues(pixel1.B + pixel2.B);
+        //    return new Pixel(r, g, b, default, default); 
+        //}
+
+        //private static double FilterExtremeValues(double pixel)
+        //{
+        //    var value = Math.Min(pixel, 255);
+        //    value = Math.Max(value, 0);
+        //    return value;
+        //}
     }
 
     public struct Point

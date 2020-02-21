@@ -48,7 +48,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Filters\Base\IFilterOptionControls.cs" />
+    <Compile Include="Filters\MatrixFilter.cs" />
+    <Compile Include="Filters\Matrixs\Base\IMatrix.cs" />
+    <Compile Include="Filters\Matrixs\BlurMatrix.cs" />
+    <Compile Include="Filters\Matrixs\SharpnessMatrix.cs" />
+    <Compile Include="Filters\Matrixs\TESTMatrix.cs" />
     <Compile Include="Filters\MedianFilter.cs" />
+    <Compile Include="Filters\SobelFilter.cs" />
     <Compile Include="Form2.cs">
       <SubType>Form</SubType>
     </Compile>

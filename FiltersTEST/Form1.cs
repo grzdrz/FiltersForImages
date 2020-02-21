@@ -36,7 +36,9 @@ namespace FiltersTEST
             {
                 new GrayShadesFilter(),
                 new ThresholdFilter(),
-                new MedianFilter()
+                new MedianFilter(), 
+                new SobelFilter(),
+                new MatrixFilter()
             };
             comboBox1.DisplayMember = "FilterName";
         }

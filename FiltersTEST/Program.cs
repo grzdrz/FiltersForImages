@@ -17,7 +17,7 @@ namespace FiltersTEST
         [STAThread]
         static void Main()
         {
-            TEST();
+            //TEST();
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);

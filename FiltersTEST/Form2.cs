@@ -49,6 +49,16 @@ namespace FiltersTEST
                     TextBox tempControl = (TextBox)control;
                     Filter.FilterOptions[tempControl.Name] = tempControl.Text;
                 }
+                if (control is TrackBar) 
+                {
+                    TrackBar tempControl = (TrackBar)control;
+                    Filter.FilterOptions[tempControl.Name] = (double)tempControl.Value;
+                }
+                if (control is ComboBox)
+                {
+                    ComboBox tempControl = (ComboBox)control;
+                    Filter.FilterOptions[tempControl.Name] = tempControl.SelectedItem;
+                }
             }
 
             Form1.Enabled = true;

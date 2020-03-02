@@ -11,6 +11,10 @@ namespace FiltersTEST.Filters.Matrixs
     {
         public string MatrixName => "Blur";
 
+        public double DefaultDiv => 90d;
+
+        public double Offset => 0d;
+
         public double[,] Matrix => new double[,]
         {
             { 0, 0, 1, 0, 0 },

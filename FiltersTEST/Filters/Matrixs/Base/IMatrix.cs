@@ -10,6 +10,10 @@ namespace FiltersTEST.Filters.Matrixs.Base
     {
         string MatrixName { get; }
 
+        double DefaultDiv { get; }
+
+        double Offset { get; }
+
         double[,] Matrix { get; }
     }
 }
